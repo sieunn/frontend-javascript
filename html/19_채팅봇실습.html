@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>채팅 프로그램</title>
+</head>
+<body>
+    <h1>챗봇 상담하기</h1>
+    <div id="chat-container">
+        <div id="chat-box">
+            <div id="input-box"></div>
+                <input type="text" id="user-input" placeholder="메세지를 입력하세요..">
+                <button onclick="보내기버튼()">보내기</button>
+            </div>
+        </div>
+
+        <script>
+            function 보내기버튼(){
+                const inputbox = document.getElementById("user-input");
+                const message = inputbox.value;
+
+                if(message == ""){
+                    retrun;
+                }
+
+                메세지보이기(message, "user");
+                input.value="";
+
+
+                
+                메세지보이기("저는 채팅봇입니다.", "bot")
+            }
+
+            function 메세지보이기(message, sender){
+                const chatbox = document.getElementById("chat-box");
+                const messageElement = document.createElement("div");
+
+                messageElement.classList.add("message" + sender + "-message");
+                messageElement.textContent = message;
+
+            }
+
+
+
+        </script>
+</body>
+</html>

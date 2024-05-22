@@ -1,26 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>실습</title>
     <style>
-        
+     body{
+        background-color: #f9f9f9;
+     }
+    .컨테이너{
+            background-color: white;
+            border: 2px solid gray;
+            margin: 50px auto;
+    }
+    .hidden {
+        display: none;
+    }
+    button{
+        margin-bottom: 50px;
+    }
     </style>
-</head>
-<body>
-    <h1>점심메뉴 고르기</h1>
-    <div id="메뉴리스트">
-        <div id="메뉴종류">
-        <h2>메뉴리스트</h2>
-        <button onclick="showSubMenu()">중식</button><br>
-        <button onclick="showSubMenu()">한식</button><br>
-        <button onclick="showSubMenu()">일식</button><br>
-        </div>
+  </head>
+  <body>
+    <div class="컨테이너">
+    <h1>점심 메뉴 고르기</h1>
+    <h3>메뉴리스트</h3>
+    <div id="menu">
+      <button onclick="showSubMenu('중식')" class="china">중식</button>
+      <button onclick="showSubMenu('한식')" class="korea">한식</button>
+      <button onclick="showSubMenu('일식')" class="japan">일식</button>
     </div>
 
+    <div id="submenu" class="hidden">
+      <h2 id="submenu-title"></h2>
+
+      <ul id="submenu-list" class="china"></ul>
+
+      <ul id="submenu-list" class="korea"></ul>
+
+      <ul id="submenu-list" class="japan"></ul>
+    </div>
+    </div>
     <script>
+      function showSubMenu() {
+        const submenu = document.getElementById("submenu");
+        const submenuTitle = document.getElementById("submenu-title");
+        const submenuList = document.getElementById("submenu-list");
 
+        submenuTitle.textContent = menu + "메뉴";
+        submenuList.innerHTML = ""; //이전에 보여준 메뉴들 모두 없애고 새로 보이기
+
+        // 선택한 메뉴에 따라 세부 메뉴 표시하기
+        switch (menu) {
+          case "중식":
+            submenuList.innerHTML =
+              "<li>짜장면</li><li>짬뽕</li><li>탕수육</li>";
+            break;
+          case "한식":
+            submenuList.innerHTML =
+              "<li>비빔밥</li><li>된장찌개</li><li>불고기</li>";
+            break;
+          case "일식":
+            submenuList.innerHTML = "<li>초밥</li><li>라멘</li><li>돈까스</li>";
+            break;
+          default:
+            break;
+        }
+
+        submenu.classList.remove("hidden");
+      }
     </script>
-
-</body>
+  </body>
 </html>
