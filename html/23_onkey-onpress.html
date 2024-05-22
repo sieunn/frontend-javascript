@@ -22,9 +22,17 @@
     </script>
 
     <h1>onpress - enter 키</h1>
-    <p>input이나 textarea 에 값을 입력후 enter를 누르면 버튼을 따로 클릭하지 않아도 클릭한 것처럼 작동</p>
+    <p>
+        input이나 textarea 에 값을 입력후 
+        키보드에서 (한글을 제외한) 모든 키를 누르면
+        버튼을 따로 클릭하지 않아도 클릭한 것처럼 작동 - 한글만 잘 작동하고 그 외의 문자를 넣으면 한글자마다 엔터가 쳐짐
     
-    <input type="text" onkeypress="엔터기능()">
+        onkeypress - 권장하진 않음
+        onkeydown - onkeypress 대신 권장여기에 엔터기능을 넣음
+    
+    </p>
+    
+    <input type="text" onkeydown="엔터기능(event)">
 </body>
 
     <script src="../js/23_onkey-onpress.js"></script>
