@@ -10,8 +10,10 @@
                 const 검색박스 = $(this).val();
                 var 검색결과확인 = false;
                 $('li').each(function(){
-                    var 텍스트 = $(this).text();
-                    if(텍스트.indexOf(검색박스)===-1){
+                    var text = $(this).text();
+                    console.log(" **************** ");
+                    console.log(text); //자바에서 sysout같은 존재
+                    if(text.indexOf(검색박스)===-1){
                         $(this).hide();
                     }else{
                         $(this).show();
@@ -28,7 +30,7 @@
         });
     </script>
     <style>
-        .컨테이너{
+        .container{
             width: 600px;
             margin: 20px auto;
             padding: 20px;

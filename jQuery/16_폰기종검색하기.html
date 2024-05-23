@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>폰기종 검색하기</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#폰기종검색").keyup(function(){
+                const 폰기종검색 = $(this).val();
+                const 검색결과확인 = false;
+                $('li').each(function(){
+                    var text = $(this).text();
+
+                    if(text.indexOf(폰기종검색)===-1){
+                        $(this).hide()
+                    }else{
+                        $(this).show();
+                        검색결과확인 = true;
+                    }
+                });
+
+                if(검색결과확인){
+                    $("#검색결과").hide();
+                }else{
+                    $("#검색결과").show();
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="컨테이너">
+        <input type="text" id="폰기종검색" placeholder="핸드폰 기종을 검색해주세요">
+        <ul id="폰기종">
+            <li>Galaxy S21</li>
+            <li>iPhone 12</li>
+            <li>Google Pixel 5</li>
+            <li>OnePlus 9</li>
+            <li>Xiaomi Mi 11</li>
+            <li>LG Velvet</li>
+        </ul>
+        <p id="검색결과">검색결과가 없습니다.</p>
+    </div>
+    
+</body>
+</html>
