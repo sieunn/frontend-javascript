@@ -16,18 +16,18 @@
     <h2>회원가입</h2>
     <form action="#" name="signupForm">
         <h3>생년월일</h3>
-        <input type="text" class="signup-input" id="inputYears" name="user_years">
+        <input type="text" class="signup-input" id="inputBirth" name="user_years">
         <br>
         <span class="input-result">yyyy-mm-dd 생년월일을 입력하세요</span>
     </form>
     <script>
         /*유효성 여부를 체크해두는 객체 생성*/
         const checkList = {
-            "inputYears" : false
+            "inputBirth" : false
         }
-        const inputYears = document.querySelector("#inputYears");
+        const inputBirth = document.querySelector("#inputBirth");
 
-        inputYears.addEventListener("input", e =>{ //e는 이벤트 객체
+        inputBirth.addEventListener("input", e =>{ //e는 이벤트 객체
             //          e(input).target = 이벤트가 발생한 태그(버튼,입력,필드 등)를 가리킴
             //                      value = 이벤트가 발생한 태그의 값을 가져오기
             const value = e.target.value; //입력된 이름의 값
@@ -40,13 +40,11 @@
                 span.textContent = "yyyy-mm-dd 생년월일을 입력하세요";
                 span.classList.remove("check","error");
                 e.target.value = "";
-                checkList["inputYears"] = false;
+                checkList["inputBirth"] = false;
                 return;
             }
-            /*한글 이름을 위한 정규식 검사*/
+          
             // /^ 정규식 시작
-            // [가-힣] 모든한글 사용가능  
-            // {2,5} 2~5글자까지만 작성가능
             // $/ 정규식 종료
             const birthdateRegex = /^(19|20)\d{2}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/;
 
@@ -55,12 +53,12 @@
                 span.textContent = "유효한 생년월일 입니다.";
                 span.classList.add("check");
                 span.classList.remove("error");
-                checkList["inputYears"] = true;
+                checkList["inputBirth"] = true;
             }else{
                 span.textContent = "유효하지 않은 생년월일 입니다.";
                 span.classList.add("error");
                 span.classList.remove("check");
-                checkList["inputYears"] = false;
+                checkList["inputBirth"] = false;
             }
         })
 
