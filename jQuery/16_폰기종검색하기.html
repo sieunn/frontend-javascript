@@ -8,7 +8,7 @@
         $(document).ready(function(){
             $("#폰기종검색").keyup(function(){
                 const 폰기종검색 = $(this).val();
-                const 검색결과확인 = false;
+                var 검색결과확인 = false;
                 $('li').each(function(){
                     var text = $(this).text();
 
