@@ -10,6 +10,16 @@
       crossorigin="anonymous"
     />
   </head>
+  <style>
+    .card-img-top {
+        /*
+        object-fit: 이미지나 비디오를 틀 안에 어떻게 맞춰서 작성할지 선택
+        cover : 이미지나 비디오의 틀의 비율을 유지하면서 틀에 완전히 채워지도록 조정
+        */
+        object-fit: cover; 
+        height: 300px;
+    }
+  </style>
   <body>
     <!--네비게이션 바-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -26,7 +36,7 @@
                     <a class="nav-link" href="#">게시판</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="이미지갤러리.html">이미지 갤러리</a>
+                    <a class="nav-link" href="03_이미지갤러리.html">이미지 갤러리</a>
                 </li>
             </ul>
         </div>
@@ -35,11 +45,12 @@
 
     <div class="container">
       <!--전체틀-->
-      <div class="row">
+      <div class="row mt-5">
         <!--가로-->
         <div class="col-md-4">
           <!--세로, md 중간사이즈로 4칸 차지-->
-          <div class="card">
+          <div class="card text-bg-success">
+            <div class="card-header">Header</div>
             <div class="card-body">
               <img src="이미지/옐로우짱구.jpg" class="card-img-top" />
               <h5 class="card-title">카드 타이틀</h5>
@@ -83,11 +94,11 @@
 
 
 
-      <div class="row">
+      <div class="row mt-5">
         <div class="col-md-4">
             <div class="card">
                 <div class="card-body">
-                    <img src="이미지/귀염짱구.jpg" class="card-img-top">
+                    <img src="이미지/hogam.jpg" class="card-img-top">
                     <h5 class="card-title">짱구</h5>
                     <p class="card-text">
                         눈이 반짝이는 짱구는 귀엽다.
@@ -100,7 +111,7 @@
         <div class="col-md-4">
             <div class="card">
                 <div class="card-body">
-                    <img src="이미지/수박짱구.jpg" class="card-img-top">
+                    <img src="이미지/marley.jpg" class="card-img-top">
                     <h5 class="card-title">짱구</h5>
                     <p class="card-text">
                         수박을 먹는 짱구는 귀엽다.
@@ -113,7 +124,7 @@
         <div class="col-md-4">
             <div class="card">
                 <div class="card-body">
-                    <img src="이미지/케익짱구.jpg" class="card-img-top">
+                    <img src="이미지/healing.jpg" class="card-img-top">
                     <h5 class="card-title">짱구</h5>
                     <p class="card-text">
                         케익을 먹는 짱구는 귀엽다.
